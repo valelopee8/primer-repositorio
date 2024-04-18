@@ -1,0 +1,72 @@
+Clase 12/04/2024 - Programación III
+
+Compilador de C/C++
+gcc --version (gcc instalado) 
+
+ls
+common.cpp common.h serial.cpp
+
+Compilar códigos fuentes
+gcc serial.cpp common.cpp -lm -o motionBrown
+(-o salida, generar ejecutable)
+(-lm linkear recursos externo, librerías matemáticas. Se usa para hacer referencias a las dependencias)
+
+ls -ltr
+motionBrown (generado)
+
+cat serial.cpp
+(visor de textos planos)
+
+-h Ver ayuda
+-n Cantidad de partículas
+-o Nombre del ejecutable
+
+Ejecutar un binario
+./motionBrown -n 100 -o puntos.dat
+
+ls -ltr (puntos.dat)
+
+cat puntos.dat | wc -l
+(cantidad de entradas, coordenadas)
+
+./motionBrown -n 1000 -o puntos.dat
+cat puntos.dat | wc -l
+
+./motionBrown -n 10000 -o puntos.dat
+cat puntos.dat | wc -l
+
+Terminar ejecución
+Ctrl + C
+
+Información de CPU
+lscpu
+
+Información de memoria
+free -h
+
+Listado ordenado por peso de archivos
+ls -lSh
+
+cat puntos.dat | wc -l
+
+Instalar htop (gestor de procesos)
+htop
+./motionBrown -n 1000 -o puntos.dat
+
+Se podría compilar con mejor rendimiento si se aprovechan todos los recursos del computador. Es decir, pasar de una
+ejecución secuencial a uno paralelo. El tiempo de ejecución se reduce considerablemente.
+Cabe recalcar que no todos los programas se pueden paralelizar, se puede lograr en ciertos aspectos del algoritmo, 
+tal vez un 25% o 20%.
+
+Si es secuencual se ejecuta en un solo procesador.
+Si es paralelo se ejecuta en más de un procesador.
+
+Eliminar archivos
+ls -ltr
+rm motionBrown
+rm puntos.dat
+ls -ltr
+
+tsks.json
+"${fileDirname}/**.cpp"
+"-lm"
